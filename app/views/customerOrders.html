@@ -1,0 +1,36 @@
+﻿<div class="container">
+    <div class="jumbotron">
+        <h2>Orders for {{ customer.firstName + ' ' + customer.lastName }}</h2>
+        <p>{{customer.address}} {{customer.city}}</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            Product Name:
+            <br />
+            <input data-ng-model="newOrder.productName" type="text" placeholder="Product Name">
+        </div>
+        <div class="col-sm-3">
+            Unit Price:
+            <br />
+            <input data-ng-model="newOrder.unitPrice" type="text" placeholder="Unit Price">
+        </div>
+        <div class="col-sm-3">
+            Quantity:
+            <br />
+            <input data-ng-model="newOrder.quantity" type="text" placeholder="Quantity">
+        </div>
+        <div class="col-sm-3">
+            <br />
+            <button class="btn btn-success" type="button" data-ng-click="insertOrder()"
+                    data-ng-disabled="!newOrder.productName || !newOrder.unitPrice || !newOrder.quantity">
+                Add Order
+            </button>
+        </div>
+    </div>
+    <br /><br />
+    <div class="row">
+        <div class="span12">
+            <div data-ng-include="'/app/views/ordersTemplate.html'" />
+        </div>
+    </div>
+</div>

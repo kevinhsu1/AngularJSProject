@@ -1,0 +1,22 @@
+﻿.orders th, .customerOrders th {
+    width:25%;
+    cursor: pointer;
+}
+
+footer {
+    margin-top:10px;
+    font-weight: bold;
+}
+
+.selectable {
+    cursor: pointer
+}
+
+/* Bootstrap overrides */
+.navbar {
+    border-radius: 0px !important;
+}
+
+.close {
+    opacity: 1.0;
+}

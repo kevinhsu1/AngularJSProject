@@ -1,0 +1,6 @@
+c:\users\kevin\documents\visual studio 2013\Projects\AngularJSProject\AngularJSProject\bin\AngularJSProject.dll.config
+c:\users\kevin\documents\visual studio 2013\Projects\AngularJSProject\AngularJSProject\bin\AngularJSProject.dll
+c:\users\kevin\documents\visual studio 2013\Projects\AngularJSProject\AngularJSProject\bin\AngularJSProject.pdb
+c:\users\kevin\documents\visual studio 2013\Projects\AngularJSProject\AngularJSProject\obj\Debug\AngularJSProject.csprojResolveAssemblyReference.cache
+c:\users\kevin\documents\visual studio 2013\Projects\AngularJSProject\AngularJSProject\obj\Debug\AngularJSProject.dll
+c:\users\kevin\documents\visual studio 2013\Projects\AngularJSProject\AngularJSProject\obj\Debug\AngularJSProject.pdb
