@@ -1,0 +1,67 @@
+@mixin rounded-corners {
+  $rounded-corner-radius: 4px;
+  -webkit-border-radius: $rounded-corner-radius;
+  -moz-border-radius: $rounded-corner-radius;
+  -ms-border-radius: $rounded-corner-radius;
+  border-radius: $rounded-corner-radius;
+}
+
+table {
+    @include rounded-corners;
+    border-collapse: separate !important;
+    border-spacing: 2px !important;
+  th {
+    cursor: pointer;
+    background-color: yellow;
+    width: 25%;
+  }
+}
+
+/* Bootstrap overrides */
+.navbar {
+    border-radius: 0px !important;
+}
+
+/* ngAnimate */
+@mixin keyframes($arg) {
+  @-webkit-keyframes #{$arg} {
+    @content; 
+  }
+  @-moz-keyframes #{$arg} {
+    @content;
+  }
+  @-ms-keyframes #{$arg} {
+    @content;
+  }
+  @keyframes #{$arg} {
+    @content;
+  } 
+}
+
+@include keyframes(slideOutLeft) {
+  to { transform: translateX(-100%); }
+}
+@include keyframes(slideInRight) {
+  from { transform:translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@mixin ngAnimateEnter($arg) {
+  -webkit-animation: $arg;
+  -moz-animation: $arg;
+  animation: $arg;
+}
+
+#divView.ng-enter {
+    @include ngAnimateEnter(slideInRight 0.8s both ease-in);
+}
+
+@mixin ngAnimateLeave($arg) {
+  -webkit-animation: $arg;
+  -moz-animation: $arg;
+  animation: $arg;
+}
+
+#divView.ng-leave {
+    @include ngAnimateLeave(slideOutLeft 0.5s both ease-in);
+}

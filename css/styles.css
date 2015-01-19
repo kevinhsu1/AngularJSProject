@@ -1,22 +1,60 @@
-﻿.orders th, .customerOrders th {
-    width:25%;
+table {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  border-collapse: separate !important;
+  border-spacing: 2px !important; }
+  table th {
     cursor: pointer;
-}
-
-footer {
-    margin-top:10px;
-    font-weight: bold;
-}
-
-.selectable {
-    cursor: pointer
-}
+    background-color: yellow;
+    width: 25%; }
 
 /* Bootstrap overrides */
 .navbar {
-    border-radius: 0px !important;
-}
+  border-radius: 0px !important; }
 
-.close {
-    opacity: 1.0;
-}
+/* ngAnimate */
+@-webkit-keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%); } }
+@-moz-keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%); } }
+@-ms-keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%); } }
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%); } }
+@-webkit-keyframes slideInRight {
+  from {
+    transform: translateX(100%); }
+  to {
+    transform: translateX(0); } }
+@-moz-keyframes slideInRight {
+  from {
+    transform: translateX(100%); }
+  to {
+    transform: translateX(0); } }
+@-ms-keyframes slideInRight {
+  from {
+    transform: translateX(100%); }
+  to {
+    transform: translateX(0); } }
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%); }
+  to {
+    transform: translateX(0); } }
+#divView.ng-enter {
+  -webkit-animation: slideInRight 0.8s both ease-in;
+  -moz-animation: slideInRight 0.8s both ease-in;
+  animation: slideInRight 0.8s both ease-in; }
+
+#divView.ng-leave {
+  -webkit-animation: slideOutLeft 0.5s both ease-in;
+  -moz-animation: slideOutLeft 0.5s both ease-in;
+  animation: slideOutLeft 0.5s both ease-in; }
+
+/*# sourceMappingURL=styles.css.map */
