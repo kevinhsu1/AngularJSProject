@@ -1,4 +1,4 @@
-﻿app.controller('OrdersTemplateController', function ($scope) {
+﻿app.controller('OrdersTemplateController', function ($scope, $routeParams, customersService) {
     $scope.orderByField = 'firstName';
     $scope.reverseSort = true;
     $scope.ordersTotal = 0.00;
@@ -11,6 +11,10 @@
         }
         return total;
     }
+
+    $scope.deleteOrder = function (orderId) {
+        customersService.deleteOrder(orderId);
+    };
 
     $scope.$on('getTotalEvent', function (e) {
         $scope.getTotal();

@@ -1,24 +1,26 @@
-﻿<table class="table table-hover table-striped table-condensed table-bordered"
+﻿<table id="tableOrdersTemplate" class="table table-hover table-striped table-condensed table-bordered"
        data-ng-controller="OrdersTemplateController">
     <thead>
         <tr>
-            <th class="selectable">
+            <th>
                 <a ng-click="orderByField='product'; reverseSort = !reverseSort">Product</a>
             </th>
-            <th class="selectable">
+            <th>
                 <a ng-click="orderByField='quantity'; reverseSort = !reverseSort">Quantity</a>
             </th>
-            <th class="selectable">
+            <th>
                 <a ng-click="orderByField='price'; reverseSort = !reverseSort">Unit Price</a>
             </th>
-            <th class="selectable">
+            <th>
                 <a ng-click="orderByField='order.quantity * order.price'; reverseSort = !reverseSort">Total</a>
+            </th>
+            <th>
             </th>
         </tr>
     </thead>
     <tbody>
         <tr data-ng-hide="customer.orders || customer.orders.length > 0" class="error">
-            <td colspan="4">
+            <td colspan="5">
                 <div class="text-center"><strong>No orders found</strong></div>
             </td>
         </tr>
@@ -34,6 +36,9 @@
             </td>
             <td>
                 {{ order.quantity * order.price | currency }}
+            </td>
+            <td>
+                <a class="btn-link" ng-click="deleteOrder(order.orderId)">Delete order</a>
             </td>
         </tr>
         <tr class="info">

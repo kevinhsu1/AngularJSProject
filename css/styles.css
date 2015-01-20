@@ -1,14 +1,19 @@
-table {
+#tableOrdersTemplate, #tableCustomers {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
   border-collapse: separate !important;
   border-spacing: 2px !important; }
-  table th {
+  #tableOrdersTemplate th, #tableCustomers th {
     cursor: pointer;
-    background-color: yellow;
-    width: 25%; }
+    background-color: yellow; }
+
+#tableOrdersTemplate th {
+  width: 20%; }
+
+#tableCustomers th {
+  width: 25%; }
 
 /* Bootstrap overrides */
 .navbar {

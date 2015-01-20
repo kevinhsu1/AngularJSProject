@@ -6,15 +6,22 @@
   border-radius: $rounded-corner-radius;
 }
 
-table {
+#tableOrdersTemplate, #tableCustomers {
     @include rounded-corners;
     border-collapse: separate !important;
     border-spacing: 2px !important;
   th {
     cursor: pointer;
     background-color: yellow;
-    width: 25%;
   }
+}
+
+#tableOrdersTemplate th {
+    width: 20%;
+}
+
+#tableCustomers th {
+    width: 25%;
 }
 
 /* Bootstrap overrides */

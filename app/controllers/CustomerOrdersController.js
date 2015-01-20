@@ -19,5 +19,4 @@
             $scope.$broadcast('getTotalEvent');
         }
     };
-
 });
