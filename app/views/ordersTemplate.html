@@ -16,6 +16,8 @@
             </th>
             <th>
             </th>
+            <th>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -36,6 +38,9 @@
             </td>
             <td>
                 {{ order.quantity * order.price | currency }}
+            </td>
+            <td>
+                <a class="btn-link" ng-click="EditOrder(order.orderId)">Edit order</a>
             </td>
             <td>
                 <a class="btn-link" ng-click="deleteOrder(order.orderId)">Delete order</a>

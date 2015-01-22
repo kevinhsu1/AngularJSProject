@@ -43,6 +43,8 @@
                     </th>
                     <th>
                     </th>
+                    <th>
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -55,6 +57,9 @@
                     </td>
                     <td>
                         <a href="#/customerorders/{{customer.id}}" class="btn-link">View {{ customer.orders.length }} Orders</a>
+                    </td>
+                    <td>
+                        <a class="btn-link" ng-click="EditCustomer(customer.id)">Edit customer</a>
                     </td>
                     <td>
                         <a class="btn-link" ng-click="deleteCustomer(customer.id)">Delete customer</a>

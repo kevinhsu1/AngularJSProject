@@ -1,0 +1,44 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Edit Customer</h3>
+</div>
+<div class="modal-body">
+    <table class="table">
+        <tr>
+            <td style="width: 15%">
+                First Name: 
+            </td>
+            <td style="width: 85%">
+                <input type="text" ng-model="currentCustomer.firstName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name:
+            </td>
+            <td>
+                <input type="text" ng-model="currentCustomer.lastName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address:
+            </td>
+            <td>
+                <input type="text" ng-model="currentCustomer.address" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City:
+            </td>
+            <td>
+                <input type="text" ng-model="currentCustomer.city" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="Edit()">Edit</button>
+    <button class="btn" ng-click="Close()">Close</button>
+</div>

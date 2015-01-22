@@ -1,0 +1,36 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Edit Order</h3>
+</div>
+<div class="modal-body">
+    <table class="table">
+        <tr>
+            <td style="width: 15%">
+                Product:
+            </td>
+            <td style="width: 85%">
+                <input type="text" ng-model="currentOrder.product" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Price:
+            </td>
+            <td>
+                <input type="text" ng-model="currentOrder.price" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Quantity:
+            </td>
+            <td>
+                <input type="text" ng-model="currentOrder.quantity" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="Edit()">Edit</button>
+    <button class="btn" ng-click="Close()">Close</button>
+</div>

@@ -31,6 +31,17 @@
         return null;
     };
 
+    this.getOrder = function (orderId) {
+        for (var i = customers.length - 1; i >= 0; i--) {
+            for (var j = customers[i].orders.length - 1; j >= 0; j--) {
+                if (customers[i].orders[j].orderId === orderId) {
+                    return customers[i].orders[j];
+                }
+            }
+        }
+        return null;
+    };
+
     this.insertOrder = function (productName, unitPrice, quantity, customerId) {
         var currentCustomer = this.getCustomer(customerId);
 
