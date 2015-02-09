@@ -59,8 +59,10 @@
   <ItemGroup>
     <Content Include="app\controllers\CustomerEditController.js" />
     <Content Include="app\controllers\OrderEditController.js" />
+    <Content Include="app\services\usersPostsService.js" />
     <Content Include="app\views\customerEdit.html" />
     <Content Include="app\views\orderEdit.html" />
+    <Content Include="css\sb-admin.css" />
     <Content Include="css\styles.scss" />
     <Content Include="Gemfile" />
     <Content Include="node_modules\connect\index.js" />

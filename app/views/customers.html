@@ -1,71 +1,78 @@
-﻿<div class="container">
-    <div class="jumbotron">
-        <h2>Customers</h2>
-        <p>Allow users to view and add customers</p>
-    </div>
-    <div class="row">
+﻿<div class="jumbotron">
+    <h2>Customers</h2>
+    <p>Allow users to view and add customers</p>
+</div>
+<div class="row">
+    <form name="formAddCustomer" novalidate>
         <div class="col-sm-3">
             First Name:
             <br />
-            <input data-ng-model="newCustomer.firstName" type="text" placeholder="First Name">
+            <input data-ng-model="newCustomer.firstName" type="text" name="firstName" placeholder="First Name" required>
+            <div ng-show="formAddCustomer.$submitted || formAddCustomer.firstName.$touched">
+                <span ng-show="formAddCustomer.firstName.$error.required">First name is required</span>
+            </div>
         </div>
         <div class="col-sm-3">
             Last Name:
             <br />
-            <input data-ng-model="newCustomer.lastName" type="text" placeholder="Last Name">
+            <input data-ng-model="newCustomer.lastName" type="text" name="lastName" placeholder="Last Name" required>
+            <div ng-show="formAddCustomer.$submitted || formAddCustomer.lastName.$touched">
+                <span ng-show="formAddCustomer.lastName.$error.required">Last name is required</span>
+            </div>
         </div>
         <div class="col-sm-3">
             City:
             <br />
-            <input data-ng-model="newCustomer.city" type="text" placeholder="Customer City">
+            <input data-ng-model="newCustomer.city" type="text" name="city" placeholder="Customer City" required>
+            <div ng-show="formAddCustomer.$submitted || formAddCustomer.city.$touched">
+                <span ng-show="formAddCustomer.city.$error.required">City is required</span>
+            </div>
         </div>
         <div class="col-sm-3">
             <br />
-            <button class="btn btn-success" type="button" data-ng-click="insertCustomer()"
-                    data-ng-disabled="!newCustomer.firstName || !newCustomer.lastName || !newCustomer.city">
-                Add Customer
-            </button>
+            <input class="btn btn-success" type="submit" data-ng-click="insertCustomer()"
+                   data-ng-disabled="!newCustomer.firstName || !newCustomer.lastName || !newCustomer.city"
+                   value="Add Customer" />
         </div>
-    </div>
-    <br /><br />
-    <div>
-        <table id="tableCustomers" class="table table-striped table-hover table-bordered">
-            <thead>
-                <tr>
-                    <th>
-                        <a ng-click="orderByField='firstName'; reverseSort = !reverseSort">Name</a>
-                    </th>
-                    <th>
-                        <a ng-click="orderByField='city'; reverseSort = !reverseSort">City</a>
-                    </th>
-                    <th>
-                        <a ng-click="orderByField='customer.orders.length'; reverseSort = !reverseSort">Orders</a>
-                    </th>
-                    <th>
-                    </th>
-                    <th>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr data-ng-repeat="customer in customers | orderBy:'firstName':reverseSort">
-                    <td>
-                        {{customer.firstName + ' ' + customer.lastName}}
-                    </td>
-                    <td>
-                        {{customer.city}}
-                    </td>
-                    <td>
-                        <a href="#/customerorders/{{customer.id}}" class="btn-link">View {{ customer.orders.length }} Orders</a>
-                    </td>
-                    <td>
-                        <a class="btn-link" ng-click="EditCustomer(customer.id)">Edit customer</a>
-                    </td>
-                    <td>
-                        <a class="btn-link" ng-click="deleteCustomer(customer.id)">Delete customer</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    </form>
 </div>
+<br /><br />
+
+<table id="tableCustomers" class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th ng-click="orderByField='firstName'; reverseSort = !reverseSort">
+                Name
+            </th>
+            <th ng-click="orderByField='city'; reverseSort = !reverseSort">
+                City
+            </th>
+            <th ng-click="orderByField='customer.orders.length'; reverseSort = !reverseSort">
+                Orders
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="customer in customers | orderBy:'firstName':reverseSort" class="animationEffect">
+            <td>
+                {{customer.firstName + ' ' + customer.lastName}}
+            </td>
+            <td>
+                {{customer.city}}
+            </td>
+            <td>
+                <a href="#/customerorders/{{customer.id}}" class="btn-link">View {{ customer.orders.length }} Orders</a>
+            </td>
+            <td>
+                <a class="btn-link" ng-click="EditCustomer(customer.id)">Edit customer</a>
+            </td>
+            <td>
+                <a class="btn-link" ng-click="deleteCustomer(customer.id)">Delete customer</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

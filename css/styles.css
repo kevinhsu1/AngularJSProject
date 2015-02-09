@@ -1,3 +1,6 @@
+form span {
+  color: red; }
+
 #tableOrdersTemplate, #tableCustomers {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -6,8 +9,7 @@
   border-collapse: separate !important;
   border-spacing: 2px !important; }
   #tableOrdersTemplate th, #tableCustomers th {
-    cursor: pointer;
-    background-color: yellow; }
+    cursor: pointer; }
 
 #tableOrdersTemplate th {
   width: 16%; }
@@ -34,32 +36,41 @@
     transform: translateX(-100%); } }
 @-webkit-keyframes slideInRight {
   from {
-    transform: translateX(100%); }
+    transform: translateX(50%); }
   to {
     transform: translateX(0); } }
 @-moz-keyframes slideInRight {
   from {
-    transform: translateX(100%); }
+    transform: translateX(50%); }
   to {
     transform: translateX(0); } }
 @-ms-keyframes slideInRight {
   from {
-    transform: translateX(100%); }
+    transform: translateX(50%); }
   to {
     transform: translateX(0); } }
 @keyframes slideInRight {
   from {
-    transform: translateX(100%); }
+    transform: translateX(50%); }
   to {
     transform: translateX(0); } }
 #divView.ng-enter {
-  -webkit-animation: slideInRight 0.8s both ease-in;
-  -moz-animation: slideInRight 0.8s both ease-in;
-  animation: slideInRight 0.8s both ease-in; }
+  -webkit-animation: slideInRight 0.2s both ease-in;
+  -moz-animation: slideInRight 0.2s both ease-in;
+  animation: slideInRight 0.2s both ease-in; }
 
-#divView.ng-leave {
-  -webkit-animation: slideOutLeft 0.5s both ease-in;
-  -moz-animation: slideOutLeft 0.5s both ease-in;
-  animation: slideOutLeft 0.5s both ease-in; }
+.animationEffect.ng-enter,
+.animationEffect.ng-leave {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  transition: 0.5s linear all; }
+
+.animationEffect.ng-enter,
+.animationEffect.ng-leave.ng-leave-active {
+  opacity: 0; }
+
+.animationEffect.ng-enter.ng-enter-active,
+.animationEffect.ng-leave {
+  opacity: 1; }
 
 /*# sourceMappingURL=styles.css.map */

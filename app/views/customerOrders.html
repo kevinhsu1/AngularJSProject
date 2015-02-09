@@ -1,36 +1,46 @@
-﻿<div class="container">
-    <div class="jumbotron">
-        <h2>Orders for {{ customer.firstName + ' ' + customer.lastName }}</h2>
-        <p>{{customer.address}} {{customer.city}}</p>
-    </div>
-    <div class="row">
+﻿<div class="jumbotron">
+    <h2>Orders for {{ customer.firstName + ' ' + customer.lastName }}</h2>
+    <p>{{customer.address}} {{customer.city}}</p>
+</div>
+<div class="row">
+    <form name="formAddOrder" novalidate>
         <div class="col-sm-3">
             Product Name:
             <br />
-            <input data-ng-model="newOrder.productName" type="text" placeholder="Product Name">
+            <input data-ng-model="newOrder.productName" type="text" name="productName" placeholder="Product Name" required>
+            <div ng-show="formAddOrder.$submitted || formAddOrder.productName.$touched">
+                <span ng-show="formAddOrder.productName.$error.required">Product name is required</span>
+            </div>
         </div>
         <div class="col-sm-3">
             Unit Price:
             <br />
-            <input data-ng-model="newOrder.unitPrice" type="text" placeholder="Unit Price">
+            <input data-ng-model="newOrder.unitPrice" type="number" name="unitPrice" placeholder="Unit Price" required>
+            <div ng-show="formAddOrder.$submitted || formAddOrder.unitPrice.$touched">
+                <span ng-show="formAddOrder.unitPrice.$error.required">Unit price is required</span>
+                <span ng-show="formAddOrder.unitPrice.$error.number">The value is not a valid number</span>
+            </div>
         </div>
         <div class="col-sm-3">
             Quantity:
             <br />
-            <input data-ng-model="newOrder.quantity" type="text" placeholder="Quantity">
+            <input data-ng-model="newOrder.quantity" type="number" name="quantity" placeholder="Quantity" required>
+            <div ng-show="formAddOrder.$submitted || formAddOrder.quantity.$touched">
+                <span ng-show="formAddOrder.quantity.$error.required">Quantity is required</span>
+                <span ng-show="formAddOrder.quantity.$error.number">The value is not a valid number</span>
+            </div>
         </div>
         <div class="col-sm-3">
             <br />
-            <button class="btn btn-success" type="button" data-ng-click="insertOrder()"
-                    data-ng-disabled="!newOrder.productName || !newOrder.unitPrice || !newOrder.quantity">
-                Add Order
-            </button>
+            <input class="btn btn-success" type="submit" data-ng-click="insertOrder()"
+                   data-ng-disabled="!newOrder.productName || !newOrder.unitPrice || !newOrder.quantity"
+                   value="Add Order" />
         </div>
-    </div>
-    <br /><br />
-    <div class="row">
-        <div class="span12">
-            <div data-ng-include="'/app/views/ordersTemplate.html'" />
-        </div>
+    </form>
+</div>
+<br /><br />
+<div class="row">
+    <div class="span12">
+        <div data-ng-include="'/app/views/ordersTemplate.html'" />
     </div>
 </div>

@@ -8,9 +8,10 @@
         var lastName = $scope.newCustomer.lastName;
         var city = $scope.newCustomer.city;
         customersService.insertCustomer(firstName, lastName, city);
-        $scope.newCustomer.firstName = '';
-        $scope.newCustomer.lastName = '';
-        $scope.newCustomer.city = '';
+        //$scope.newCustomer.firstName = '';
+        //$scope.newCustomer.lastName = '';
+        //$scope.newCustomer.city = '';
+        //$scope.formAddCustomer.$setPristine();
     };
 
     $scope.EditCustomer = function (customerId) {

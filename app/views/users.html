@@ -1,0 +1,27 @@
+﻿<div class="container">
+    <div class="jumbotron">
+        <h2>Users</h2>
+        <p>Allow users to view and add users</p>
+    </div>
+
+    <div>
+        <table id="tableUsers" class="table table-striped table-hover table-bordered">
+            <tbody>
+                <tr data-ng-repeat="user in users">
+                    <td>
+                        {{user.name}}
+                    </td>
+                    <td>
+                        {{user.email}}
+                    </td>
+                    <td>
+                        {{user.phone}}
+                    </td>
+                    <td>
+                        <a href="#/userPosts/{{user.id}}" class="btn-link">View Posts</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

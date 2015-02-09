@@ -1,14 +1,12 @@
-﻿<div class="container">
-    <div class="jumbotron">
-        <h2>Orders</h2>
-        <p>View all customer orders</p>
-    </div>
-    <div>
-        <div class="row">
-            <div class="span12" data-ng-repeat="customer in customers | orderBy:'lastName'">
-                <h4><a href="#/customerorders/{{customer.id}}">{{ customer.firstName + ' ' + customer.lastName }}</a></h4>
-                <div data-ng-include="'/app/views/ordersTemplate.html'" />
-            </div>
+﻿<div class="jumbotron">
+    <h2>Orders</h2>
+    <p>View all customer orders</p>
+</div>
+<div>
+    <div class="row">
+        <div class="span12 animationEffect" data-ng-repeat="customer in customers | orderBy:'lastName'">
+            <h4><a href="#/customerorders/{{customer.id}}">{{ customer.firstName + ' ' + customer.lastName }}</a></h4>
+            <div data-ng-include="'/app/views/ordersTemplate.html'" />
         </div>
     </div>
 </div>

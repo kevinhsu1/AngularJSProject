@@ -5,9 +5,11 @@
 
     $scope.getTotal = function () {
         var total = 0.00;
-        for (var i = 0; i < $scope.customer.orders.length; i++) {
-            var order = $scope.customer.orders[i];
-            total += (order.price * order.quantity);
+        if ($scope.customer.orders != null) {
+            for (var i = 0; i < $scope.customer.orders.length; i++) {
+                var order = $scope.customer.orders[i];
+                total += (order.price * order.quantity);
+            }
         }
         return total;
     }

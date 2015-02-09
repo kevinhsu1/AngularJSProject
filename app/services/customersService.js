@@ -45,6 +45,9 @@
     this.insertOrder = function (productName, unitPrice, quantity, customerId) {
         var currentCustomer = this.getCustomer(customerId);
 
+        if (currentCustomer.orders == null)
+            currentCustomer.orders = [];
+
         currentCustomer.orders.push({
             product: productName,
             price: unitPrice,

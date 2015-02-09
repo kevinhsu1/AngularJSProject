@@ -2,17 +2,17 @@
        data-ng-controller="OrdersTemplateController">
     <thead>
         <tr>
-            <th>
-                <a ng-click="orderByField='product'; reverseSort = !reverseSort">Product</a>
+            <th ng-click="orderByField='product'; reverseSort = !reverseSort">
+                Product
             </th>
-            <th>
-                <a ng-click="orderByField='quantity'; reverseSort = !reverseSort">Quantity</a>
+            <th ng-click="orderByField='quantity'; reverseSort = !reverseSort">
+                Quantity
             </th>
-            <th>
-                <a ng-click="orderByField='price'; reverseSort = !reverseSort">Unit Price</a>
+            <th ng-click="orderByField='price'; reverseSort = !reverseSort">
+                Unit Price
             </th>
-            <th>
-                <a ng-click="orderByField='order.quantity * order.price'; reverseSort = !reverseSort">Total</a>
+            <th ng-click="orderByField='order.quantity * order.price'; reverseSort = !reverseSort">
+                Total
             </th>
             <th>
             </th>
@@ -26,7 +26,7 @@
                 <div class="text-center"><strong>No orders found</strong></div>
             </td>
         </tr>
-        <tr data-ng-repeat="order in customer.orders | orderBy:'product':reverseSort">
+        <tr data-ng-repeat="order in customer.orders | orderBy:'product':reverseSort" class="animationEffect">
             <td>
                 {{ order.product }}
             </td>

@@ -6,13 +6,16 @@
   border-radius: $rounded-corner-radius;
 }
 
+form span {
+    color: red;
+}
+
 #tableOrdersTemplate, #tableCustomers {
     @include rounded-corners;
     border-collapse: separate !important;
     border-spacing: 2px !important;
   th {
     cursor: pointer;
-    background-color: yellow;
   }
 }
 
@@ -49,7 +52,7 @@
   to { transform: translateX(-100%); }
 }
 @include keyframes(slideInRight) {
-  from { transform:translateX(100%); }
+  from { transform:translateX(50%); }
   to { transform: translateX(0); }
 }
 
@@ -60,15 +63,22 @@
 }
 
 #divView.ng-enter {
-    @include ngAnimateEnter(slideInRight 0.8s both ease-in);
+    @include ngAnimateEnter(slideInRight 0.2s both ease-in);
 }
 
-@mixin ngAnimateLeave($arg) {
-  -webkit-animation: $arg;
-  -moz-animation: $arg;
-  animation: $arg;
+.animationEffect.ng-enter,
+.animationEffect.ng-leave {
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    transition: 0.5s linear all;
 }
 
-#divView.ng-leave {
-    @include ngAnimateLeave(slideOutLeft 0.5s both ease-in);
+.animationEffect.ng-enter,
+.animationEffect.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+.animationEffect.ng-enter.ng-enter-active,
+.animationEffect.ng-leave {
+    opacity: 1;
 }

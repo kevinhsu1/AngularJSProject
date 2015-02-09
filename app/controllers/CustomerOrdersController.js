@@ -12,9 +12,10 @@
         var unitPrice = $scope.newOrder.unitPrice;
         var quantity = $scope.newOrder.quantity;
         customersService.insertOrder(productName, unitPrice, quantity, parseInt($routeParams.customerID));
-        $scope.newOrder.productName = '';
-        $scope.newOrder.unitPrice = '';
-        $scope.newOrder.quantity = '';
+        //$scope.newOrder.productName = '';
+        //$scope.newOrder.unitPrice = '';
+        //$scope.newOrder.quantity = '';
+        //$scope.formAddOrder.$setPristine();
         $scope.getTotal = function () {
             $scope.$broadcast('getTotalEvent');
         }
